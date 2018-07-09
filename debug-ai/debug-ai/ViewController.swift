@@ -15,9 +15,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        initializeSession()
     }
 
-
+    func initializeSession() {
+        let session = AVCaptureSession()
+        let devices = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back).devices
+        do {
+            if let device = devices.first {
+                session.addInput(try AVCaptureDeviceInput(device: device))
+            }
+        } 
+    }
 }
 
