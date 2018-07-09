@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Foundation
+import AVFoundation
+import Vision
 
 class ViewController: UIViewController {
 
