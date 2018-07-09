@@ -25,7 +25,9 @@ class ViewController: UIViewController {
             if let device = devices.first {
                 session.addInput(try AVCaptureDeviceInput(device: device))
             }
-        } 
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
 
